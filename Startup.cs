@@ -14,7 +14,9 @@ namespace BackgroundQueue {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHostedService<BackgroundNotificationHostedService>();
-            services.AddSingleton<IBackgroundNotificationQueue, BackgroundNotificationQueue>();
+            services.AddSingleton<BackgroundNotificationQueue>();
+            services.AddSingleton<IBackgroundPublisher>(provider => provider.GetRequiredService<BackgroundNotificationQueue>());
+            services.AddSingleton<IBackgroundNotificationQueue>(provider => provider.GetRequiredService<BackgroundNotificationQueue>());
             services.AddAutoMapper();
             services.AddMediatR();
             services.AddMvc();

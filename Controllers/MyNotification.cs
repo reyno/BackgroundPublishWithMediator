@@ -41,7 +41,9 @@ namespace BackgroundQueue.Controllers {
         public Task Handle(MyNotification notification, CancellationToken cancellationToken) {
 
             // just log for now
-            throw new Exception("Unhandled exception");
+            _logger.LogInformation("Handling notification for {name}", nameof(MyNotificationHandler2));
+
+            return Task.CompletedTask;
 
         }
     }
