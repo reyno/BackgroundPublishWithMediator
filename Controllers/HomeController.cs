@@ -2,12 +2,12 @@
 
 namespace BackgroundQueue.Controllers {
     public class HomeController : Controller {
-        private readonly IBackgroundPublisher _backgroundPublisher;
+        private readonly IBackgroundNotificationQueue _backgroundNotificationQueue;
 
         public HomeController(
-            IBackgroundPublisher backgroundPublisher
+            IBackgroundNotificationQueue backgroundNotificationQueue
             ) {
-            _backgroundPublisher = backgroundPublisher;
+            _backgroundNotificationQueue = backgroundNotificationQueue;
         }
 
         public ActionResult Index() {
@@ -18,7 +18,7 @@ namespace BackgroundQueue.Controllers {
         public ActionResult QueueTask() {
 
             
-            _backgroundPublisher.Publish(new MyNotification { Value = "something interesting" });
+            _backgroundNotificationQueue.QueueNotification(new MyNotification { Value = "something interesting" });
 
             return RedirectToAction("Index");
 

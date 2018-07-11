@@ -13,8 +13,8 @@ namespace BackgroundQueue {
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHostedService<QueuedHostedService>();
-            services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+            services.AddHostedService<BackgroundNotificationHostedService>();
+            services.AddSingleton<IBackgroundNotificationQueue, BackgroundNotificationQueue>();
             services.AddAutoMapper();
             services.AddMediatR();
             services.AddMvc();

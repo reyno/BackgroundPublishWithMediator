@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundQueue", "BackgroundQueue.csproj", "{0ABAFC7B-B55D-433F-80C2-BF0A33CA164F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundPublishWithMediator", "BackgroundPublishWithMediator.csproj", "{0ABAFC7B-B55D-433F-80C2-BF0A33CA164F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
