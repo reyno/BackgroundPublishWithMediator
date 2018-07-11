@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BackgroundPublishWithMediator;
+using Microsoft.AspNetCore.Mvc;
 
-namespace BackgroundQueue.Controllers {
+namespace BackgroundPublishWithMediator.Controllers {
     public class HomeController : Controller {
         private readonly IBackgroundPublisher _backgroundPublisher;
 

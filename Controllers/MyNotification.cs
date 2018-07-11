@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BackgroundQueue.Controllers {
+namespace BackgroundPublishWithMediator.Controllers {
 
     public class MyNotification : INotification {
         public string Value { get; set; }

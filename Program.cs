@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace BackgroundQueue {
+namespace BackgroundPublishWithMediator {
     public class Program
     {
         public static void Main(string[] args)

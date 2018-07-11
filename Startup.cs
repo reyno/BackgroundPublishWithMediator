@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using BackgroundQueue.Controllers;
+using BackgroundPublishWithMediator;
+using BackgroundPublishWithMediator.Controllers;
 using MediatR;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BackgroundQueue {
+namespace BackgroundPublishWithMediator {
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -14,9 +15,8 @@ namespace BackgroundQueue {
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHostedService<BackgroundNotificationHostedService>();
-            services.AddSingleton<BackgroundNotificationQueue>();
-            services.AddSingleton<IBackgroundPublisher>(provider => provider.GetRequiredService<BackgroundNotificationQueue>());
-            services.AddSingleton<IBackgroundNotificationQueue>(provider => provider.GetRequiredService<BackgroundNotificationQueue>());
+            services.AddSingleton<IBackgroundNotificationQueue, BackgroundNotificationQueue>();
+            services.AddSingleton<IBackgroundPublisher, BackgroundPublisher>();
             services.AddAutoMapper();
             services.AddMediatR();
             services.AddMvc();
