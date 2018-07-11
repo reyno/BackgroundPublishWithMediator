@@ -19,13 +19,15 @@ namespace BackgroundPublishWithMediator.Controllers {
             _logger = logger;
         }
 
-        public Task Handle(MyNotification notification, CancellationToken cancellationToken) {
+        public async Task Handle(MyNotification notification, CancellationToken cancellationToken) {
 
             // just log for now
             _logger.LogInformation("Handling notification for {name}", nameof(MyNotificationHandler1));
 
-            return Task.CompletedTask;
+            await Task.Delay(5000);
 
+            _logger.LogInformation("Notification for {name} completed", nameof(MyNotificationHandler1));
+            
         }
     }
 
